@@ -1,0 +1,38 @@
+.auth-bg {
+  background: url('./Rccg_logo.png') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.auth-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('./Rccg_logo.png') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.15; /* Adjust this value for more/less fade */
+  z-index: 0;
+}
+
+.auth-card {
+   position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
