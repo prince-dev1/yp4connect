@@ -18,26 +18,25 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
       <Link className="navbar-brand" to="/dashboard">YP4Connect</Link>
 
-      <div className="collapse navbar-collapse">
+      {/* Toggler button for mobile */}
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+
+      {/* Collapsible content */}
+      <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav me-auto">
           {user && (
             <>
-              <li className="nav-item">
-                <Link
-                  to="/chat"
-                  className={`nav-link ${location.pathname === '/chat' ? 'active' : ''}`}
-                >
-                  ChatRoom
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/announcements"
-                  className={`nav-link ${location.pathname === '/announcements' ? 'active' : ''}`}
-                >
-                  Announcements
-                </Link>
-              </li>
+              {/* Add extra links for logged-in users here if needed */}
             </>
           )}
         </ul>
@@ -52,7 +51,7 @@ function Navbar() {
           ) : (
             <>
               <li className="nav-item">
-                <Link to="/dashboard" className="btn btn-success btn-sm me-2">Login</Link>
+                <Link to="/login" className="btn btn-success btn-sm me-2">Login</Link>
               </li>
               <li className="nav-item">
                 <Link to="/register" className="btn btn-outline-info btn-sm">Register</Link>
